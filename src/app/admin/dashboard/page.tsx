@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from "next/cache";
 import { supabaseAdmin } from "@/lib/supabase";
 import type { Reservation } from "@/lib/types";
 import {
@@ -6,6 +7,9 @@ import {
     UtensilsCrossed,
     CalendarCheck,
 } from "lucide-react";
+
+// Force this page to always be dynamically rendered — never statically cached.
+export const dynamic = "force-dynamic";
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -74,6 +78,9 @@ function StatusBadge({ status }: { status: string }) {
 // ── Data fetching ─────────────────────────────────────────────────────────────
 
 async function fetchDashboardData() {
+    // Opt out of Next.js data cache for this specific fetch.
+    noStore();
+
     const today = todayISO();
     const { start: weekStart, end: weekEnd } = weekRangeISO();
 
@@ -118,7 +125,7 @@ async function fetchDashboardData() {
             .limit(5),
     ]);
 
-    return {
+    const result = {
         todayCount: todayCount ?? 0,
         pendingCount: pendingCount ?? 0,
         menuCount: menuCount ?? 0,
@@ -126,6 +133,9 @@ async function fetchDashboardData() {
         todayReservations: (todayReservations as Reservation[]) ?? [],
         recentReservations: (recentReservations as Reservation[]) ?? [],
     };
+
+    console.log(`[admin/dashboard] todayCount=${result.todayCount} pending=${result.pendingCount} recentRows=${result.recentReservations.length}`);
+    return result;
 }
 
 // ── Stat card ─────────────────────────────────────────────────────────────────
