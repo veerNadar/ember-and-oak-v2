@@ -1,4 +1,5 @@
 import type { MenuItem } from "@/lib/types";
+import Image from "next/image";
 
 // Category label map
 const CATEGORY_LABELS: Record<MenuItem["category"], string> = {
@@ -27,13 +28,14 @@ export default function MenuCard({ item }: MenuCardProps) {
         <article className="relative group bg-charcoal-light border border-ash/20 rounded-sm overflow-hidden hover:border-ember/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ember/10 flex flex-col">
 
             {/* ── Image / placeholder ── */}
-            <div className={`relative h-44 bg-gradient-to-br ${CATEGORY_GRADIENTS[item.category]} shrink-0`}>
+            <div className={`relative h-44 bg-gradient-to-br ${CATEGORY_GRADIENTS[item.category]} shrink-0 overflow-hidden`}>
                 {item.image_url ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
+                    <Image
                         src={item.image_url}
                         alt={item.name}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                     />
                 ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -47,7 +49,7 @@ export default function MenuCard({ item }: MenuCardProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent" />
 
                 {/* Category badge */}
-                <div className="absolute top-3 left-3">
+                <div className="absolute top-3 left-3 z-10">
                     <span className="inline-block px-2.5 py-0.5 bg-charcoal/80 backdrop-blur-sm border border-ash/30 rounded-full font-inter text-[10px] font-semibold text-cream/70 tracking-widest uppercase">
                         {CATEGORY_LABELS[item.category]}
                     </span>
@@ -77,7 +79,7 @@ export default function MenuCard({ item }: MenuCardProps) {
 
             {/* ── Unavailable overlay ── */}
             {!item.is_available && (
-                <div className="absolute inset-0 bg-charcoal/80 backdrop-blur-[2px] flex items-center justify-center">
+                <div className="absolute inset-0 bg-charcoal/80 backdrop-blur-[2px] flex items-center justify-center z-20">
                     <span className="font-inter text-xs font-semibold text-cream/50 tracking-widest uppercase border border-ash/30 px-4 py-1.5 rounded-full">
                         Unavailable
                     </span>
