@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 import type { Reservation } from "@/lib/types";
+import { sendOwnerNotification, sendCustomerConfirmation } from "@/lib/email";
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
@@ -114,6 +115,12 @@ export async function POST(req: NextRequest) {
         console.error("[reservations/POST] insert error:", insertError);
         return jsonError("Failed to create reservation.", 500);
     }
+
+    // Fire emails in parallel — errors are caught inside each helper
+    await Promise.allSettled([
+        sendOwnerNotification(data as Reservation),
+        sendCustomerConfirmation(data as Reservation),
+    ]);
 
     return NextResponse.json(data as Reservation, { status: 201 });
 }
