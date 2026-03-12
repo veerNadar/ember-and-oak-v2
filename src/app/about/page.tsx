@@ -147,11 +147,11 @@ export default function AboutPage() {
                             {/* Circle portrait */}
                             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-ash/30 overflow-hidden">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1583394293214-0d8809f7db5e?w=600&q=80"
+                                    src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=600&q=80"
                                     alt="Executive Chef Marcus Cole"
                                     width={320}
                                     height={320}
-                                    className="w-full h-full object-cover object-top"
+                                    className="w-full h-full object-cover object-center"
                                     priority
                                 />
                             </div>
