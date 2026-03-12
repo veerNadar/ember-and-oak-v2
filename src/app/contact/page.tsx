@@ -98,17 +98,18 @@ export default function ContactPage() {
                 {/* ── RIGHT: Info panel (2/5) ── */}
                 <div className="lg:col-span-2 space-y-6">
 
-                    {/* Map placeholder */}
-                    <div className="relative w-full h-48 rounded-sm overflow-hidden bg-gradient-to-br from-oak via-charcoal-light to-oak-dark border border-ash/20">
-                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-cream/20">
-                            <MapPin size={28} />
-                            <p className="font-inter text-xs tracking-widest uppercase">
-                                Map coming soon
-                            </p>
-                        </div>
-                        {/* Corner accents */}
-                        <div className="absolute top-3 left-3 w-8 h-8 border-t border-l border-ember/30" />
-                        <div className="absolute bottom-3 right-3 w-8 h-8 border-b border-r border-ember/30" />
+                    {/* Google Maps embed */}
+                    <div className="w-full rounded-sm overflow-hidden border-2 border-ember/40" style={{ height: "450px" }}>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.9!2d-97.7431!3d30.2672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDE2JzAxLjkiTiA5N8KwNDQnMzUuMiJX!5e0!3m2!1sen!2sus!4v1234567890"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Ember & Oak location map"
+                        />
                     </div>
 
                     {/* Address & contact */}

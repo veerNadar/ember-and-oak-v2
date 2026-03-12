@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ToastProvider from "@/components/ToastProvider";
 import NextAuthProvider from "@/components/NextAuthProvider";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 // ── Fonts ─────────────────────────────────────
 const playfair = Playfair_Display({
@@ -62,6 +63,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <ToastProvider />
+          <WhatsAppButton />
         </NextAuthProvider>
       </body>
     </html>
