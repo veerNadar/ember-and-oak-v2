@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import type { MenuItem } from "@/lib/types";
 
@@ -39,15 +40,25 @@ export default async function FeaturedDishes() {
                     key={dish.id}
                     className="group relative bg-charcoal-light rounded-sm overflow-hidden border border-ash/20 hover:border-ember/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-ember/10"
                 >
-                    {/* Image placeholder */}
+                    {/* Image — real photo or gradient fallback */}
                     <div
-                        className={`relative h-52 bg-gradient-to-br ${CARD_GRADIENTS[i % 3]} overflow-hidden`}
+                        className={`relative h-52 overflow-hidden ${!dish.image_url ? `bg-gradient-to-br ${CARD_GRADIENTS[i % 3]}` : "bg-charcoal"}`}
                     >
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="font-playfair text-4xl text-cream/10 select-none">
-                                ✦
-                            </span>
-                        </div>
+                        {dish.image_url ? (
+                            <Image
+                                src={dish.image_url}
+                                alt={dish.name}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                            />
+                        ) : (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <span className="font-playfair text-4xl text-cream/10 select-none">
+                                    ✦
+                                </span>
+                            </div>
+                        )}
                         {/* Subtle ember shimmer on hover */}
                         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
                     </div>

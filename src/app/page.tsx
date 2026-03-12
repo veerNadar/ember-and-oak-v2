@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, Star, ArrowRight, UtensilsCrossed, Flame } from "lucide-react";
 import FeaturedDishes, { FeaturedDishesSkeleton } from "@/components/home/FeaturedDishes";
 import FeaturedDishesErrorBoundary from "@/components/home/FeaturedDishesErrorBoundary";
@@ -240,23 +241,22 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Decorative panel */}
+          {/* Photo panel */}
           <div className="relative hidden lg:block">
-            <div className="relative w-full aspect-[4/5] rounded-sm overflow-hidden bg-gradient-to-br from-oak via-charcoal-light to-oak-dark border border-ash/20">
-              {/* Layered decorative elements */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <Flame size={48} className="text-ember/30 mx-auto" />
-                  <p className="font-playfair text-2xl text-cream/10 italic">
-                    Est. 2019
-                  </p>
-                </div>
-              </div>
+            <div className="relative w-full aspect-[4/5] rounded-sm overflow-hidden border border-ash/20">
+              <Image
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+                alt="Ember & Oak — warm restaurant interior with moody lighting"
+                fill
+                sizes="50vw"
+                className="object-cover"
+                priority
+              />
               {/* Ember gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-ember/10 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent" />
               {/* Corner accent */}
-              <div className="absolute top-6 right-6 w-16 h-16 border-t border-r border-ember/30" />
-              <div className="absolute bottom-6 left-6 w-16 h-16 border-b border-l border-ember/30" />
+              <div className="absolute top-6 right-6 w-16 h-16 border-t border-r border-ember/40" />
+              <div className="absolute bottom-6 left-6 w-16 h-16 border-b border-l border-ember/40" />
             </div>
             {/* Floating stat card */}
             <div className="absolute -bottom-6 -left-6 bg-charcoal border border-ash/30 px-6 py-4 shadow-2xl">
