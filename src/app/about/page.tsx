@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Flame, Leaf, Sparkles, Star } from "lucide-react";
 import StatsCounter from "@/components/about/StatsCounter";
 
@@ -140,14 +141,19 @@ export default function AboutPage() {
             <section className="py-20 md:py-24 px-6 bg-oak/30">
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
-                    {/* Photo placeholder */}
+                    {/* Chef portrait */}
                     <div className="flex justify-center md:justify-end">
                         <div className="relative">
                             {/* Circle portrait */}
-                            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-oak via-charcoal-light to-oak-dark border-2 border-ash/30 flex items-center justify-center overflow-hidden">
-                                <span className="font-playfair text-7xl font-bold text-cream/10 select-none">
-                                    MC
-                                </span>
+                            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-ash/30 overflow-hidden">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1583394293214-0d8809f7db5e?w=600&q=80"
+                                    alt="Executive Chef Marcus Cole"
+                                    width={320}
+                                    height={320}
+                                    className="w-full h-full object-cover object-top"
+                                    priority
+                                />
                             </div>
                             {/* Ember ring accent */}
                             <div className="absolute inset-0 rounded-full border-2 border-ember/20 scale-110 pointer-events-none" />
@@ -273,26 +279,56 @@ export default function AboutPage() {
                     </div>
 
                     <div className="grid grid-cols-3 grid-rows-2 gap-3 h-[480px] md:h-[600px]">
-                        {/* Cell 1 — tall left */}
-                        <div className="row-span-2 bg-gradient-to-br from-oak via-charcoal to-oak-dark rounded-sm flex items-center justify-center relative overflow-hidden group">
+                        {/* Cell 1 — tall left (row-span-2) */}
+                        <div className="row-span-2 rounded-sm overflow-hidden relative group">
+                            <Image
+                                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80"
+                                alt="Ember & Oak dining room interior"
+                                fill
+                                sizes="33vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
                             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent" />
-                            <Flame size={32} className="text-ember/20 relative z-10 group-hover:text-ember/40 transition-colors duration-300" />
                         </div>
                         {/* Cell 2 */}
-                        <div className="bg-gradient-to-br from-charcoal via-oak-light to-charcoal-dark rounded-sm flex items-center justify-center relative overflow-hidden group">
-                            <Leaf size={24} className="text-cream/10 group-hover:text-cream/20 transition-colors duration-300" />
+                        <div className="rounded-sm overflow-hidden relative group">
+                            <Image
+                                src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=800&q=80"
+                                alt="Outdoor terrace at golden hour"
+                                fill
+                                sizes="33vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
                         </div>
                         {/* Cell 3 */}
-                        <div className="bg-gradient-to-br from-oak-dark via-charcoal to-oak rounded-sm flex items-center justify-center relative overflow-hidden group">
-                            <Sparkles size={24} className="text-ember/15 group-hover:text-ember/30 transition-colors duration-300" />
+                        <div className="rounded-sm overflow-hidden relative group">
+                            <Image
+                                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80"
+                                alt="Restaurant bar and lounge area"
+                                fill
+                                sizes="33vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
                         </div>
                         {/* Cell 4 */}
-                        <div className="bg-gradient-to-br from-charcoal-light via-oak to-charcoal rounded-sm flex items-center justify-center relative overflow-hidden group">
-                            <Flame size={24} className="text-cream/10 group-hover:text-cream/20 transition-colors duration-300" />
+                        <div className="rounded-sm overflow-hidden relative group">
+                            <Image
+                                src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80"
+                                alt="Chef plating a gourmet dish"
+                                fill
+                                sizes="33vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
                         </div>
                         {/* Cell 5 */}
-                        <div className="bg-gradient-to-br from-oak via-charcoal-dark to-oak-light rounded-sm flex items-center justify-center relative overflow-hidden group">
-                            <Star size={22} className="text-ember/15 group-hover:text-ember/30 transition-colors duration-300" />
+                        <div className="rounded-sm overflow-hidden relative group">
+                            <Image
+                                src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80"
+                                alt="Artisan cocktail with garnishes"
+                                fill
+                                sizes="33vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
                         </div>
                     </div>
                 </div>
