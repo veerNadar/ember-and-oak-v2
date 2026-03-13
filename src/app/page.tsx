@@ -104,10 +104,19 @@ export default function HomePage() {
       >
         {/* Background layers — outermost div gets parallax id */}
         <div id="hero-parallax-bg" className="absolute inset-0 will-change-transform">
-          <div className="absolute inset-0 bg-charcoal" />
-          <div className="absolute inset-0 bg-gradient-to-br from-oak/60 via-charcoal to-charcoal-dark" />
+          {/* Hero photo */}
+          <Image
+            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80"
+            alt="Ember & Oak restaurant interior — warm fire-lit ambiance"
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+            priority
+          />
+          {/* Dark overlay — 60% black for text legibility */}
+          <div className="absolute inset-0 bg-black/60" />
           {/* Warm ember vignette */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(200,105,42,0.18),transparent)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(200,105,42,0.15),transparent)]" />
           {/* Decorative ember orb */}
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-ember/5 blur-3xl pointer-events-none" />
         </div>
