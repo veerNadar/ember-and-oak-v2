@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ChevronDown, Star, ArrowRight, UtensilsCrossed, Flame } from "lucide-react";
 import FeaturedDishes, { FeaturedDishesSkeleton } from "@/components/home/FeaturedDishes";
 import FeaturedDishesErrorBoundary from "@/components/home/FeaturedDishesErrorBoundary";
+import ScrollAnimations from "@/components/home/ScrollAnimations";
 
 const BASE_URL = "https://www.emberandoak.com";
 
@@ -93,6 +94,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function HomePage() {
   return (
     <>
+      <ScrollAnimations />
       {/* ══════════════════════════════════════════
           1. HERO
       ══════════════════════════════════════════ */}
@@ -100,21 +102,22 @@ export default function HomePage() {
         className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
         aria-label="Hero"
       >
-        {/* Background layers */}
-        <div className="absolute inset-0 bg-charcoal" />
-        <div className="absolute inset-0 bg-gradient-to-br from-oak/60 via-charcoal to-charcoal-dark" />
-        {/* Warm ember vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(200,105,42,0.18),transparent)]" />
-        {/* Bottom fade to page */}
+        {/* Background layers — outermost div gets parallax id */}
+        <div id="hero-parallax-bg" className="absolute inset-0 will-change-transform">
+          <div className="absolute inset-0 bg-charcoal" />
+          <div className="absolute inset-0 bg-gradient-to-br from-oak/60 via-charcoal to-charcoal-dark" />
+          {/* Warm ember vignette */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(200,105,42,0.18),transparent)]" />
+          {/* Decorative ember orb */}
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-ember/5 blur-3xl pointer-events-none" />
+        </div>
+        {/* Bottom fade stays outside parallax so it doesn't move */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-charcoal to-transparent" />
-
-        {/* Decorative ember orb */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-ember/5 blur-3xl pointer-events-none" />
 
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-ember/30 bg-ember/10">
+          <div className="animate-on-scroll inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-ember/30 bg-ember/10" data-delay="0.1">
             <Flame size={13} className="text-ember" />
             <span className="font-inter text-xs text-ember font-semibold tracking-[0.15em] uppercase">
               Austin, Texas
@@ -122,18 +125,18 @@ export default function HomePage() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold text-cream leading-[1.1] tracking-tight mb-6">
+          <h1 className="animate-on-scroll font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold text-cream leading-[1.1] tracking-tight mb-6" data-delay="0.2">
             Where the fire{" "}
             <em className="text-ember not-italic">does the talking.</em>
           </h1>
 
           {/* Sub-headline */}
-          <p className="font-inter text-lg sm:text-xl text-cream/65 leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="animate-on-scroll font-inter text-lg sm:text-xl text-cream/65 leading-relaxed max-w-2xl mx-auto mb-10" data-delay="0.35">
             Austin&apos;s most talked-about table is waiting for you.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="animate-on-scroll flex flex-col sm:flex-row items-center justify-center gap-4" data-delay="0.5">
             <Link
               href="/menu"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-ember hover:bg-ember-light active:bg-ember-dark text-cream font-inter text-sm font-semibold tracking-wider uppercase rounded-sm transition-all duration-200 shadow-lg shadow-ember/25 hover:shadow-ember/40 hover:shadow-xl"
@@ -164,7 +167,7 @@ export default function HomePage() {
       <section className="py-20 md:py-28 bg-charcoal px-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-14">
+          <div className="animate-on-scroll text-center mb-14" data-delay="0">
             <p className="font-inter text-xs text-ember font-semibold tracking-[0.2em] uppercase mb-3">
               From the Kitchen
             </p>
@@ -201,7 +204,7 @@ export default function HomePage() {
           3. ABOUT SNIPPET
       ══════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-oak/40 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+        <div className="animate-on-scroll max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center" data-delay="0">
           {/* Text */}
           <div className="space-y-6">
             <p className="font-inter text-xs text-ember font-semibold tracking-[0.2em] uppercase">
@@ -262,7 +265,7 @@ export default function HomePage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ember/50 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ember/50 to-transparent" />
 
-        <div className="relative max-w-3xl mx-auto text-center space-y-6">
+        <div className="animate-on-scroll relative max-w-3xl mx-auto text-center space-y-6" data-delay="0">
           <p className="font-inter text-xs text-ember font-semibold tracking-[0.2em] uppercase">
             Reservations
           </p>
@@ -290,7 +293,7 @@ export default function HomePage() {
       <section className="py-20 md:py-28 bg-charcoal px-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-14">
+          <div className="animate-on-scroll text-center mb-14" data-delay="0">
             <p className="font-inter text-xs text-ember font-semibold tracking-[0.2em] uppercase mb-3">
               Guest Experiences
             </p>
@@ -305,7 +308,8 @@ export default function HomePage() {
             {TESTIMONIALS.map((t) => (
               <blockquote
                 key={t.id}
-                className="flex flex-col bg-charcoal-light border border-ash/20 rounded-sm p-7 space-y-4 hover:border-ember/30 transition-colors duration-300"
+                className="animate-on-scroll flex flex-col bg-charcoal-light border border-ash/20 rounded-sm p-7 space-y-4 hover:border-ember/30 transition-colors duration-300"
+                data-delay={`${t.id * 0.12}`}
               >
                 <StarRating rating={t.rating} />
                 <p className="font-inter text-sm text-cream/70 leading-relaxed flex-1">

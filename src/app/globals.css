@@ -67,3 +67,25 @@
     font-family: var(--font-inter), system-ui, sans-serif;
   }
 }
+
+/* ─── Scroll reveal animations ─── */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  /* transition-delay is set dynamically via data-delay in JS */
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
