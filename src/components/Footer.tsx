@@ -46,7 +46,7 @@ export default function Footer() {
                             Ember &amp; Oak
                         </h2>
                         <p className="mt-1 font-inter text-sm text-cream/50 italic tracking-wide">
-                            Fire-crafted food, rooted in tradition.
+                            Fired up since 2019.
                         </p>
                     </div>
 

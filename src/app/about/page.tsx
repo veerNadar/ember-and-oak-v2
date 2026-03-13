@@ -84,8 +84,9 @@ export default function AboutPage() {
                 <p className="font-inter text-xs text-ember font-semibold tracking-[0.2em] uppercase mb-3 relative z-10">
                     Ember &amp; Oak
                 </p>
-                <h1 className="font-playfair text-5xl md:text-6xl font-bold text-cream relative z-10 mb-4">
-                    Our Story
+                <h1 className="font-playfair text-5xl md:text-6xl font-bold text-cream relative z-10 mb-4 leading-tight">
+                    No shortcuts.<br />
+                    <span className="text-ember">No apologies.</span>
                 </h1>
                 <div className="flex items-center justify-center gap-4 relative z-10">
                     <div className="h-px w-16 bg-gradient-to-l from-ember to-transparent" />
@@ -93,8 +94,7 @@ export default function AboutPage() {
                     <div className="h-px w-16 bg-gradient-to-r from-ember to-transparent" />
                 </div>
                 <p className="mt-5 font-inter text-base text-cream/55 max-w-xl mx-auto relative z-10">
-                    A story of fire, seasons, and the deep belief that a meal shared
-                    is the most human thing we do.
+                    Just fire, craft, and food worth talking about.
                 </p>
             </section>
 

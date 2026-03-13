@@ -123,15 +123,13 @@ export default function HomePage() {
 
           {/* Headline */}
           <h1 className="font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold text-cream leading-[1.1] tracking-tight mb-6">
-            Where Every Meal{" "}
-            <em className="text-ember not-italic">Tells a Story</em>
+            Where the fire{" "}
+            <em className="text-ember not-italic">does the talking.</em>
           </h1>
 
           {/* Sub-headline */}
           <p className="font-inter text-lg sm:text-xl text-cream/65 leading-relaxed max-w-2xl mx-auto mb-10">
-            At Ember &amp; Oak, we honour the ancient ritual of cooking over
-            fire. Seasonal ingredients, patient craftsmanship, and a belief
-            that a great meal is the finest form of storytelling.
+            Austin&apos;s most talked-about table is waiting for you.
           </p>
 
           {/* CTAs */}
@@ -147,7 +145,7 @@ export default function HomePage() {
               href="/reservations"
               className="inline-flex items-center gap-2 px-8 py-3.5 border border-cream/30 hover:border-ember text-cream/80 hover:text-ember font-inter text-sm font-semibold tracking-wider uppercase rounded-sm transition-all duration-200"
             >
-              Reserve a Table
+              Reserve Your Evening
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -210,34 +208,19 @@ export default function HomePage() {
               Our Story
             </p>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream leading-tight">
-              Rooted in Tradition,{" "}
-              <em className="text-ember not-italic">Fired by Passion</em>
+              We don&apos;t do subtle.
             </h2>
             <div className="space-y-4 text-cream/65 font-inter text-base leading-relaxed">
               <p>
-                Ember &amp; Oak was born from a simple obsession: the transformative
-                power of cooking over live fire. Executive Chef Marcus Webb spent
-                a decade in Michelin-starred kitchens across Europe before
-                returning to Austin with a vision — a restaurant that honours
-                the primal ritual of flame while honouring the complexity of
-                modern American cuisine.
-              </p>
-              <p>
-                Every dish begins with a relationship — with a local farmer, a
-                forager, or a fifth-generation rancher. We believe the finest
-                ingredient is trust. When you sit down at Ember &amp; Oak, you taste
-                the labour of an entire community, bound together by fire.
+                Every dish at Ember &amp; Oak is kissed by open flame — a little wild,
+                completely intentional, and impossible to forget.
               </p>
             </div>
             <Link
               href="/about"
               className="inline-flex items-center gap-2 font-inter text-sm font-semibold text-ember hover:text-ember-light tracking-wider uppercase transition-colors duration-200 group"
             >
-              Meet the Team
-              <ArrowRight
-                size={16}
-                className="transition-transform duration-200 group-hover:translate-x-1"
-              />
+              See how we cook →
             </Link>
           </div>
 
@@ -284,11 +267,10 @@ export default function HomePage() {
             Reservations
           </p>
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream">
-            Reserve Your Table Tonight
+            Some evenings stay with you.
           </h2>
           <p className="font-inter text-base text-cream/60 max-w-xl mx-auto">
-            Tables fill quickly — especially on weekends. Secure your evening
-            at Ember &amp; Oak and let us take care of the rest.
+            Book one.
           </p>
           <div className="pt-2">
             <Link

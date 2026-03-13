@@ -140,8 +140,7 @@ export default function GalleryPage() {
                     Ember &amp; Oak
                 </p>
                 <h1 className="font-playfair text-5xl md:text-6xl font-bold text-cream relative z-10 mb-4">
-                    Our Story in Every{" "}
-                    <span className="text-ember italic">Dish</span>
+                    Don&apos;t take our word for it.
                 </h1>
                 <div className="flex items-center justify-center gap-4 relative z-10">
                     <div className="h-px w-16 bg-gradient-to-l from-ember to-transparent" />
@@ -149,7 +148,7 @@ export default function GalleryPage() {
                     <div className="h-px w-16 bg-gradient-to-r from-ember to-transparent" />
                 </div>
                 <p className="mt-5 font-inter text-base text-cream/55 max-w-xl mx-auto relative z-10">
-                    A glimpse into the craft, warmth, and passion behind every plate — and every evening — at Ember &amp; Oak.
+                    Take a look.
                 </p>
             </div>
 

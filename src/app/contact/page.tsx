@@ -69,7 +69,7 @@ export default function ContactPage() {
                     Ember &amp; Oak
                 </p>
                 <h1 className="font-playfair text-5xl md:text-6xl font-bold text-cream relative z-10 mb-4">
-                    Contact Us
+                    Come find us.
                 </h1>
                 <div className="flex items-center justify-center gap-4 relative z-10">
                     <div className="h-px w-16 bg-gradient-to-l from-ember to-transparent" />
@@ -77,7 +77,7 @@ export default function ContactPage() {
                     <div className="h-px w-16 bg-gradient-to-r from-ember to-transparent" />
                 </div>
                 <p className="mt-5 font-inter text-base text-cream/55 max-w-xl mx-auto relative z-10">
-                    Questions, feedback, or planning a private event? We&apos;re here for all of it.
+                    We&apos;ll have a table ready.
                 </p>
             </div>
 
