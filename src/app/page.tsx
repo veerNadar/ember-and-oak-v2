@@ -113,8 +113,8 @@ export default function HomePage() {
             className="object-cover object-center"
             priority
           />
-          {/* Dark overlay — 60% black for text legibility */}
-          <div className="absolute inset-0 bg-black/60" />
+          {/* Dark overlay — 78% black for text legibility */}
+          <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 0, 0, 0.78)' }} />
           {/* Warm ember vignette */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(200,105,42,0.15),transparent)]" />
           {/* Decorative ember orb */}
