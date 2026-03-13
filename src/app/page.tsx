@@ -106,7 +106,7 @@ export default function HomePage() {
         <div id="hero-parallax-bg" className="absolute inset-0 will-change-transform">
           {/* Hero photo */}
           <Image
-            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80"
+            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80"
             alt="Ember & Oak restaurant interior — warm fire-lit ambiance"
             fill
             sizes="100vw"
