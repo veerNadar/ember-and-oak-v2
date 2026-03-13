@@ -25,7 +25,11 @@ export default function MenuCard({ item }: MenuCardProps) {
     const firstLetter = item.name.charAt(0).toUpperCase();
 
     return (
-        <article className="relative group bg-charcoal-light border border-ash/20 rounded-sm overflow-hidden hover:border-ember/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ember/10 flex flex-col">
+        <article className="relative group bg-charcoal-light border border-ash/20 rounded-sm overflow-hidden hover:border-ember/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ember/10 flex flex-col cursor-pointer"
+            style={{ borderBottom: '3px solid transparent', transition: 'border-bottom-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease' }}
+            onMouseEnter={e => (e.currentTarget.style.borderBottomColor = '#C8692A')}
+            onMouseLeave={e => (e.currentTarget.style.borderBottomColor = 'transparent')}
+        >
 
             {/* ── Image / placeholder ── */}
             <div className={`relative h-44 bg-gradient-to-br ${CATEGORY_GRADIENTS[item.category]} shrink-0 overflow-hidden`}>
@@ -35,7 +39,7 @@ export default function MenuCard({ item }: MenuCardProps) {
                         alt={item.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                        className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                     />
                 ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -62,7 +66,7 @@ export default function MenuCard({ item }: MenuCardProps) {
                     <h3 className="font-playfair text-base font-semibold text-cream leading-snug group-hover:text-ember-light transition-colors duration-200">
                         {item.name}
                     </h3>
-                    <span className="shrink-0 font-inter text-sm font-bold text-ember pt-0.5">
+                    <span className="shrink-0 font-inter text-sm font-bold text-ember group-hover:text-ember-light pt-0.5 transition-colors duration-300">
                         ${Number(item.price).toFixed(2)}
                     </span>
                 </div>
@@ -74,8 +78,7 @@ export default function MenuCard({ item }: MenuCardProps) {
                 )}
             </div>
 
-            {/* ── Hover ember bottom line ── */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-ember scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            {/* Bottom ember border — rendered via onMouseEnter/Leave above */}
 
             {/* ── Unavailable overlay ── */}
             {!item.is_available && (

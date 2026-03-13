@@ -124,7 +124,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-charcoal to-transparent" />
 
         {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-16 text-center lg:text-left">
           {/* Eyebrow */}
           <div className="animate-on-scroll inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-ember/30 bg-ember/10" data-delay="0.1">
             <Flame size={13} className="text-ember" />
@@ -134,18 +134,18 @@ export default function HomePage() {
           </div>
 
           {/* Headline */}
-          <h1 className="animate-on-scroll font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold text-cream leading-[1.1] tracking-tight mb-6" data-delay="0.2">
+          <h1 className="animate-on-scroll font-playfair text-5xl sm:text-6xl lg:text-8xl font-bold text-cream leading-[1.05] tracking-tight mb-6" data-delay="0.2">
             Where the fire{" "}
             <em className="text-ember not-italic">does the talking.</em>
           </h1>
 
           {/* Sub-headline */}
-          <p className="animate-on-scroll font-inter text-lg sm:text-xl text-cream/65 leading-relaxed max-w-2xl mx-auto mb-10" data-delay="0.35">
+          <p className="animate-on-scroll font-inter text-lg sm:text-xl text-cream/65 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-10" data-delay="0.35">
             Austin&apos;s most talked-about table is waiting for you.
           </p>
 
           {/* CTAs */}
-          <div className="animate-on-scroll flex flex-col sm:flex-row items-center justify-center gap-4" data-delay="0.5">
+          <div className="animate-on-scroll flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4" data-delay="0.5">
             <Link
               href="/menu"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-ember hover:bg-ember-light active:bg-ember-dark text-cream font-inter text-sm font-semibold tracking-wider uppercase rounded-sm transition-all duration-200 shadow-lg shadow-ember/25 hover:shadow-ember/40 hover:shadow-xl"
